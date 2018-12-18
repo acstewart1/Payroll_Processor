@@ -57,15 +57,16 @@ import sys
 
 if len(sys.argv) != 6:
     Number_Parameters_Input = len(sys.argv) - 1
-    if Number_Parameters_Input = 0:
-       Log_File.write(str(datetime.now()),": ERROR - No parameters were entered"))
-       Log_File.write(str(datetime.now()),": ERROR - The Payroll Processor is abending"))      
-    else
-       Log_File.write(str(datetime.now()),": ERROR - Incorrect number of Parameters entered - ", str(Number_Parameters_Input, " parameters were entered."))
+    print ("Number of parameters entered was ",str(Number_Parameters_Input))
+    if Number_Parameters_Input == 0:
+       Log_File.write(str(datetime.now()),": ERROR - No parameters were entered")
+       Log_File.write(str(datetime.now()),": ERROR - The Payroll Processor is abending")      
+    else:
+       Log_File.write(str(datetime.now()),": ERROR - Incorrect number of Parameters entered - ", str(Number_Parameters_Input), " parameters were entered.")
        counter = 2
        for counter in sys.argv:
-           Log_File.write(datetime.now()),": ERROR - Parameter ",counter,"entered was: ",str(sys.argv[counter]))
-    Log_File.write(str(datetime.now()),": ERROR - The Payroll Processor is abending"))         
+           Log_File.write(str(datetime.now()),": ERROR - Parameter ",counter,"entered was: ",str(sys.argv[counter]))
+    Log_File.write(str(datetime.now()),": ERROR - The Payroll Processor is abending"))
     import sys
     sys.exit()
 
@@ -74,10 +75,11 @@ if len(sys.argv) != 6:
    Parameter_1_switch = Parameter_1[:2]
    if Parameter_1_switch != "-n":
       Log_File.write(str(datetime.now()),": ERROR - First Parameter for number of batches requires -n switch. Parameter entered was: ",str(sys.argv[1]))
-      Log_File.write(str(datetime.now()),": ERROR - The Payroll Processor is abending"))
+      Log_File.write(str(datetime.now()),": ERROR - The Payroll Processor is abending")
       import sys
       sys.exit()
    else:
+      print ("end for now")
            
    
 
